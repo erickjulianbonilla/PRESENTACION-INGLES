@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Salad Recipe</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff4df;
+            margin: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #f4a340;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            font-size: 35px;
+            margin: 5px;
+        }
+
+        nav {
+            background-color: #d97925;
+            padding: 18px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav button {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+
+        nav button:hover {
+            background-color: #f4a340;
+        }
+
+        nav button.active {
+            background-color: white;
+            color: #d97925;
+        }
+
+        .slide {
+            display: none;
+            min-height: 65vh;
+            width: 85%;
+            max-width: 900px;
+            margin: 35px auto;
+            padding: 35px;
+            background-color: white;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .slide.active {
+            display: block;
+            animation: aparecer 0.4s ease;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        h2 {
+            color: #e68a24;
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        ul, ol {
+            display: inline-block;
+            text-align: left;
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        img {
+            width: 400px;
+            max-width: 100%;
+            border-radius: 15px;
+            margin-top: 15px;
+        }
+
+        .next {
+            background-color: #e68a24;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .next:hover {
+            background-color: #c66d16;
+        }
+
+        footer {
+            background-color: #d97925;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>FRUIT SALAD</h1>
+        <p>A delicious and healthy recipe!</p>
+    </header>
+
+    <!-- MENU -->
+
+    <nav>
+
+        <button class="active" onclick="showSlide('home', this)">
+            Home
+        </button>
+
+        <button onclick="showSlide('ingredients', this)">
+            Ingredients
+        </button>
+
+        <button onclick="showSlide('preparation', this)">
+            Preparation
+        </button>
+
+        <button onclick="showSlide('result', this)">
+            Result
+        </button>
+
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section id="home" class="slide active">
+
+        <h2>Welcome to my recipe!</h2>
+
+        <p>
+            Today we are going to prepare
+            a delicious and fresh fruit salad.
+            It is easy to make and very tasty!
+        </p>
+
+        <img
+        src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=800"
+        alt="Fruit Salad">
+
+        <br>
+
+        <button class="next" onclick="nextSlide('ingredients')">
+            Next →
+        </button>
+
+    </section>
+
+
+    <!-- INGREDIENTS -->
+
+
+<section id="ingredients" class="slide">
+
+    <h2>Ingredients</h2>
+
+    <p>These are the fruits we need:</p>
+
+    <div class="fruits">
+
+        <div class="fruit">
+            <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=300" alt="Banana">
+            <h3>Banana</h3>
+            <p>1 banana</p>
+        </div>
+
+        <div class="fruit">
+            <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=300" alt="Apple">
+            <h3>Apple</h3>
+            <p>1 apple</p>
+        </div>
+
+        <div class="fruit">
+            <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=300" alt="Strawberries">
+            <h3>Strawberries</h3>
+            <p>1 cup</p>
+        </div>
+
+        <div class="fruit">
+            <img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=300" alt="Grapes">
+            <h3>Grapes</h3>
+            <p>1 cup</p>
+        </div>
+
+        <div class="fruit">
+            <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?w=300" alt="Mango">
+            <h3>Mango</h3>
+            <p>1 mango</p>
+        </div>
+
+        <div class="fruit">
+            <img src="Imagenes/melon.jpg" alt="Melon">
+            <h3>Melon</h3>
+            <p>1 melon</p>
+        </div>
+
+        <div class="fruit">
+            <img src="Imagenes/papaya.jpg" alt="Papaya">
+            <h3>Papaya</h3>
+            <p>1 Papaya</p>
+        </div>
+
+        <div class="fruit">
+            <img src="Imagenes/kiwi.jpg" alt="Kiwi">
+            <h3>Kiwi</h3>
+            <p>1 kiwi</p>
+        </div>
+
+        <div class="fruit">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300" alt="Yogurt">
+            <h3>Yogurt</h3>
+            <p>1 cup</p>
+        </div>
+
+    </div>
+
+    <h2>Optional Ingredients</h2>
+
+    <p>You can also add:</p>
+
+    <div class="fruits">
+
+        <div class="fruit">
+            <img src="Imagenes/queso.jpg" alt="cheese">
+            <h3>cheese</h3>
+        </div>
+
+        <div class="fruit">
+            <img src="Imagenes/helado.jpg" alt="Yogurt">
+            <h3>Ice Cream</h3>
+        </div>
+
+    </div>
+
+    <button class="next" onclick="nextSlide('preparation')">
+        Next →
+    </button>
+
+</section>
+
+
+
+<!-- PREPARATION -->
+
+<section id="preparation" class="slide">
+
+    <h2>Preparation</h2>
+
+    <ol>
+        <li>First, wash all the fruits carefully.</li>
+
+        <li>Then, peel the banana, mango, papaya and kiwi.</li>
+
+        <li>Next, cut the banana, apple, mango, melon, papaya and kiwi into small pieces.</li>
+
+        <li>After that, cut the strawberries in half and add the grapes.</li>
+
+        <li>Then, put all the fruits in a large bowl.</li>
+
+        <li>Next, add the yogurt and mix everything carefully.</li>
+
+        <li>If you like, add some cheese and ice cream.</li>
+
+        <li>Finally, serve the fruit salad and enjoy!</li>
+    </ol>
+
+    <br>
+
+    <button class="next" onclick="nextSlide('result')">
+        Next →
+    </button>
+
+</section>
+
+
+    <!-- RESULT -->
+
+    <section id="result" class="slide">
+
+        <h2>Final Result</h2>
+
+        <p>
+            Our delicious fruit salad is ready!
+            It is colorful, fresh and tasty.
+        </p>
+
+   <img
+        src="frutas.jpg"
+        class="result-image"
+    >
+        <br>
+
+        <button class="next" onclick="nextSlide('home')">
+            Back to Home
+        </button>
+
+    </section>
+
+
+    <footer>
+        <p>Thank you for visiting my recipe!</p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function showSlide(id, button) {
+
+            let slides = document.querySelectorAll(".slide");
+
+            slides.forEach(function(slide) {
+                slide.classList.remove("active");
+            });
+
+            document.getElementById(id).classList.add("active");
+
+            let buttons = document.querySelectorAll("nav button");
+
+            buttons.forEach(function(btn) {
+                btn.classList.remove("active");
+            });
+
+            if (button) {
+                button.classList.add("active");
+            } else {
+                buttons.forEach(function(btn) {
+                    if (btn.textContent.trim().toLowerCase() === id) {
+                        btn.classList.add("active");
+                    }
+                });
+            }
+
+        }
+
+        function nextSlide(id) {
+            showSlide(id);
+        }
+
+    </script>
+
+</body>
+</html>
